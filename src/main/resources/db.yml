@@ -1,0 +1,7 @@
+# DB연동2
+# DBProperties에 정의하여 사용
+db:
+  url: jdbc:mysql://localhost:3306/test?useSSL=false&serverTimezone=UTC
+  username: root
+  password: Admin!@34
+  driverClassName: com.mysql.cj.jdbc.Driver

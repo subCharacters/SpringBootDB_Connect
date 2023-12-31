@@ -1,6 +1,7 @@
 package com.example.springbootdb_connect.controller;
 
 import com.example.springbootdb_connect.dto.MembersDTO;
+import com.example.springbootdb_connect.dto.ResponseDTO;
 import com.example.springbootdb_connect.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -25,15 +26,13 @@ public class TestController {
     }
 
     @GetMapping("/get-date")
-    public ResponseEntity<Map<String, String>> getDate() {
-        Map result = new HashMap<String, String>();
+    public ResponseEntity<ResponseDTO> getDate() {
         String now = testService.getDate();
-        result.put("Date", now);
-        return ResponseEntity.ok().body(result);
+        return ResponseDTO.success(now);
     }
 
     @GetMapping(value = "/get-memberinfo", produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity<MembersDTO> getMemberInfo(@RequestParam String username) {
-        return ResponseEntity.ok().body(testService.getMember(username));
+    public ResponseEntity<ResponseDTO> getMemberInfo(@RequestParam String username) {
+        return ResponseDTO.success(testService.getMember(username));
     }
 }
