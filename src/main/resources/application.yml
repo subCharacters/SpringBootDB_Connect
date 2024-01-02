@@ -4,12 +4,14 @@ spring:
   # 설정 파일이 여러개일 경우, 배열 형식으로 가능
   # - db.yml
   # - db2.yml등
-  config:
-    import: db.yml
+  #config:
+  #  import: db.yml
+  # DB연동 3
+  datasource:
+    mapper-location: classpath:/mapper/**/*.xml
+    username: root
+    password: Admin!@34
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://localhost:3306/test?useSSL=false&serverTimezone=UTC
 #  profiles:
 #    include: db
-#db:
-#  url: jdbc:mysql://localhost:3306/test?useSSL=false&serverTimezone=UTC
-#  username: root
-#  password: Admin!@34
-#  driverClassName: com.mysql.cj.jdbc.Driver
