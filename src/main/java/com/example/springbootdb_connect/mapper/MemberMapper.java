@@ -1,6 +1,5 @@
 package com.example.springbootdb_connect.mapper;
 
-import com.example.springbootdb_connect.dto.MembersDTO;
 import com.example.springbootdb_connect.entity.Members;
 import org.apache.ibatis.annotations.Mapper;
 

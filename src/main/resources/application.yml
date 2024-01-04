@@ -1,17 +1,7 @@
 spring:
-  # DB연동2
-  # yml은 이런 방식으로 임포트
-  # 설정 파일이 여러개일 경우, 배열 형식으로 가능
-  # - db.yml
-  # - db2.yml등
-  #config:
-  #  import: db.yml
-  # DB연동 3
   datasource:
     mapper-location: classpath:/mapper/**/*.xml
     username: root
     password: Admin!@34
     driver-class-name: com.mysql.cj.jdbc.Driver
     jdbc-url: jdbc:mysql://localhost:3306/test?useSSL=false&serverTimezone=UTC
-#  profiles:
-#    include: db
