@@ -35,4 +35,9 @@ public class TestController {
     public ResponseEntity<ResponseDTO> getMemberInfo(@RequestParam String username) {
         return ResponseDTO.success(testService.getMember(username));
     }
+
+    @GetMapping(value = "/selectMemberInfo", produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity<ResponseDTO> selectMemberInfo(@RequestParam String username) {
+        return ResponseDTO.success(testService.selectByUsername(username));
+    }
 }

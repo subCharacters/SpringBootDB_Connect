@@ -27,4 +27,13 @@ public class TestService {
         return membersDTO;
     }
 
+    public MembersDTO selectByUsername(String username) {
+        Members member = testRepository.findByUsername(username);
+        MembersDTO membersDTO = MembersDTO.builder()
+                .username(member.getUsername())
+                .password(member.getPassword())
+                .nickname(member.getNickname())
+                .build();
+        return membersDTO;
+    }
 }

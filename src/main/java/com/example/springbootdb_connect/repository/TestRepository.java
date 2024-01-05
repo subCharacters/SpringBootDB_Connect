@@ -1,7 +1,9 @@
 package com.example.springbootdb_connect.repository;
 
 import com.example.springbootdb_connect.entity.Members;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 
 /*
 * CrudRepository, PagingAndSortingRepository, JpaRepository가 존재.
@@ -13,4 +15,10 @@ import org.springframework.data.repository.CrudRepository;
 public interface TestRepository extends CrudRepository<Members, Integer> {
 
     Members findByUsername(String username);
+
+    @Query(value =
+        "select m from Members m " +
+        "where m.username = :username"
+    )
+    Members selectByUsername(@Param("username") String username);
 }
