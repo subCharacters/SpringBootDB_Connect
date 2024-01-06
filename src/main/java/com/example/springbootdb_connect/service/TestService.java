@@ -26,4 +26,34 @@ public class TestService {
                 .build();
         return membersDTO;
     }
+
+    public MembersDTO selectByUsername(String username) {
+        Members member = memberMapper.selectByUsername(username);
+        MembersDTO membersDTO = MembersDTO.builder()
+                .username(member.getUsername())
+                .password(member.getPassword())
+                .nickname(member.getNickname())
+                .build();
+        return membersDTO;
+    }
+
+    public MembersDTO selectByUsernameOnResults(String username) {
+        Members member = memberMapper.selectByUsernameOnResults(username);
+        MembersDTO membersDTO = MembersDTO.builder()
+                .username(member.getUsername())
+                .password(member.getPassword())
+                .nickname(member.getNickname())
+                .build();
+        return membersDTO;
+    }
+
+    public MembersDTO selectByUsernameOnResultMap(String username) {
+        Members member = memberMapper.selectByUsernameOnResultMap(username);
+        MembersDTO membersDTO = MembersDTO.builder()
+                .username(member.getUsername())
+                .password(member.getPassword())
+                .nickname(member.getNickname())
+                .build();
+        return membersDTO;
+    }
 }

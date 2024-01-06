@@ -35,4 +35,19 @@ public class TestController {
     public ResponseEntity<ResponseDTO> getMemberInfo(@RequestParam String username) {
         return ResponseDTO.success(testService.getMember(username));
     }
+
+    @GetMapping(value = "/selectByUsername", produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity<ResponseDTO> selectByUsername(@RequestParam String username) {
+        return ResponseDTO.success(testService.selectByUsername(username));
+    }
+
+    @GetMapping(value = "/selectByUsernameOnResults", produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity<ResponseDTO> selectByUsernameOnResults(@RequestParam String username) {
+        return ResponseDTO.success(testService.selectByUsernameOnResults(username));
+    }
+
+    @GetMapping(value = "/selectByUsernameOnResultMap", produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity<ResponseDTO> selectByUsernameOnResultMap(@RequestParam String username) {
+        return ResponseDTO.success(testService.selectByUsernameOnResultMap(username));
+    }
 }
