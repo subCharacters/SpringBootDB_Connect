@@ -16,3 +16,5 @@ INSERT INTO Members (username, password, nickname, created_at, updated_at)
 VALUES ('testuser', 'test1234', 'tests', NOW(), NOW());
 
 각각의 브랜치로 나눔
+
+잔디 심어지는거 확인
