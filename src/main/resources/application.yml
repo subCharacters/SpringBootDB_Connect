@@ -1,12 +1,17 @@
 spring:
-  # DB연동2
+  # DB연동
   # yml은 이런 방식으로 임포트
   # 설정 파일이 여러개일 경우, 배열 형식으로 가능
   # - db.yml
   # - db2.yml등
+  # 혹은
+  # --- 를 구분자로 두어
+  # spring:
+  #   profiles: dev 와 같이 설정하여 profiles단위로 나눌 수 있다.
+  # 혹은
+  # 파일명 application-dev.yml과 같이 설정하면 환경을 나눌 수 있다.
   #config:
   #  import: db.yml
-  # DB연동 3
   datasource:
     mapper-location: classpath:/mapper/**/*.xml
     username: root

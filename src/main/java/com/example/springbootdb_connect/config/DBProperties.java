@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 
-// DB연동2
+// DB연동
 @Component
 @Getter
 @Setter

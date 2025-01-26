@@ -30,19 +30,6 @@ public class DataSourceConfig {
                 .build();
     }
 
-    /* 혹은
-    @Bean
-    public DataSource dataSource() throws Exception {
-        return DataSourceBuilder
-                .create()
-                .username("MySql 유저 이름")
-                .password("MySql 비밀번호")
-                .url("MySql 경로")
-                .driverClassName("com.mysql.cj.jdbc.Driver")
-                .build();
-    }
-     */
-
     /**
      * MySql과 MyBatis를 연결해주는 객체생성
      *
